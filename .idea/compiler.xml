@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="Student" />
         <module name="Gateway" />
         <module name="Descovery" />
       </profile>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Descovery" options="-parameters" />
       <module name="Gateway" options="-parameters" />
+      <module name="Student" options="-parameters" />
       <module name="config-server" options="-parameters" />
     </option>
   </component>
