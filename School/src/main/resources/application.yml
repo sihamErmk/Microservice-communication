@@ -5,15 +5,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8081/eureka
-
 server:
   port: 8083
 
 spring:
   application:
     name: school
-    config:
-      students-url: http://localhost:8082/api/v1/students
 
   config:
     import:
@@ -24,12 +21,13 @@ spring:
     url: jdbc:mysql://localhost:3306/school
     username: root
     password:
-
   jpa:
     hibernate:
       ddl-auto: update
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
+
+
 
 
 
