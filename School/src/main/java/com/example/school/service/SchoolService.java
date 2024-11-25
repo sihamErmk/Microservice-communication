@@ -36,4 +36,16 @@ public class SchoolService {
     public List<School> findAllSchools() {
         return schoolRepository.findAll();
     }
+    public FullSchoolResponse findSchoolsWithStudents(Integer schoolId){
+        var school = schoolRepository.findById(schoolId)
+                .orElse(School.builder()
+                        .name("Not_ Found")
+                        .email("Not_ Found")
+                        .build());
+        var student =null;//find all  the students from  the student micro service
+        return null;
+
+    }
+
 }
+

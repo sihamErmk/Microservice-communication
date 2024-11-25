@@ -21,6 +21,7 @@ public class Student {
     private String email;
 
     // now, establish the relation between  the student and the  school
+    @Column(name = "school_id", nullable = true)
     private  Integer schoolId;
 
 
