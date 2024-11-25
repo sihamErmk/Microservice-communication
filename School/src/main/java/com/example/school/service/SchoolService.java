@@ -1,5 +1,6 @@
 package com.example.school.service;
 
+import com.example.school.client.StudentClient;
 import com.example.school.entity.School;
 import com.example.school.repository.SchoolRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.List;
 public class SchoolService {
 
     private final SchoolRepository schoolRepository;
+    private StudentClient studentClient;
 
     // Create a logger instance using SLF4J
     private static final Logger logger = LoggerFactory.getLogger(SchoolService.class);
@@ -42,8 +44,12 @@ public class SchoolService {
                         .name("Not_ Found")
                         .email("Not_ Found")
                         .build());
-        var student =null;//find all  the students from  the student micro service
-        return null;
+        var student =studentClient.findAllStudentsBySchool(schoolId);//find all  the students from  the student micro service
+        return FullSchoolResponse.builder()
+                .name(school.getName())
+                .email(school.getEmail())
+                .student(student)
+                .build();
 
     }
 
